@@ -1,0 +1,61 @@
+/* Global Styles */
+
+:root {
+  --dark-bg-color: #1f2937;
+  --main-text-color: #f9faf8;
+  --secondary-text-color: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-text-color {
+  color: var(--main-text-color);
+}
+
+.secondary-text-color {
+  color: var(--secondary-text-color);
+}
+
+.dark-bg-color {
+  background-color: var(--dark-bg-color);
+}
+
+.center-text {
+  text-align: center;
+}
+
+.flex-space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Header Section */
+
+header {
+  padding: 1.5rem 0;
+}
+
+header p {
+  font-size: 24px;
+}
+
+header ul {
+  display: flex;
+}
+
+header li {
+  margin-left: 1.5rem;
+  font-size: 18px;
+}
