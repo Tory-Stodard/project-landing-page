@@ -1,3 +1,7 @@
+/* Font Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 /* Global Styles */
 
 :root {
@@ -16,6 +20,10 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 li {
