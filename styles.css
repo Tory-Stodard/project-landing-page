@@ -1,3 +1,7 @@
+/* Font Import */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 /* Global Styles */
 
 :root {
@@ -11,6 +15,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  /*   border: 1px solid red; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }
 
 li {
@@ -24,9 +37,12 @@ a {
 button {
   background-color: var(--btn-color);
   color: var(--main-text-color);
-  padding: 0.5rem 2rem;
-  border-radius: 8px;
-  font-size: 18px;
+  padding: 0.25rem 1.5rem;
+  border-radius: 4px;
+}
+
+.dark-bg {
+  background-color: var(--dark-bg-color);
 }
 
 .main-text-color {
@@ -37,16 +53,18 @@ button {
   color: var(--secondary-text-color);
 }
 
-.dark-bg-color {
-  background-color: var(--dark-bg-color);
+.center-text {
+  text-align: center;
 }
 
 .extra-bold {
   font-weight: 900;
 }
 
-.center-text {
-  text-align: center;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .flex-space-between {
@@ -58,11 +76,11 @@ button {
 /* Header Section */
 
 header {
+  padding: 1.5rem 12%;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  padding: 1.5rem 150px;
 }
 
 header p {
@@ -73,16 +91,20 @@ header ul {
   display: flex;
 }
 
-header li {
-  margin-left: 1.5rem;
+header a {
   font-size: 18px;
+  margin-left: 1.5rem;
+}
+
+header a:hover {
+  color: var(--btn-color);
 }
 
 /* Hero Section */
 
 #hero {
+  padding: 0 12%;
   height: 100dvh;
-  padding: 0 150px;
   gap: 3rem;
 }
 
@@ -92,27 +114,30 @@ h1 {
 
 #hero p {
   font-size: 18px;
+  width: 450px;
+  margin: 0.5rem 0;
 }
 
 #hero button {
   border: 1px solid transparent;
 }
 
-#hero p,
-#hero button {
-  margin-top: 1rem;
+#hero button:hover {
+  background-color: var(--dark-bg-color);
+  border: 1px solid var(--btn-color);
+  cursor: pointer;
 }
 
 /* Information Section */
 
 h2 {
-  padding: 4rem 0;
+  font-size: 36px;
+  color: var(--dark-bg-color);
+  padding: 4rem;
 }
 
 .items {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
+  gap: 5rem;
   padding-bottom: 8rem;
 }
 
@@ -125,4 +150,180 @@ h2 {
 
 .item p {
   width: 150px;
+}
+
+/* Testimonial Section */
+
+#testimonial {
+  background-color: var(--secondary-text-color);
+  padding: 8rem 0;
+}
+
+.quote {
+  color: var(--dark-bg-color);
+  font-size: 36px;
+  font-style: italic;
+}
+
+.quote,
+.author {
+  width: 65%;
+  margin: 0 auto;
+}
+
+.author {
+  text-align: right;
+  padding-top: 2rem;
+  padding-right: 2rem;
+}
+
+/* CTA Section */
+
+#cta {
+  padding: 8rem 15%;
+}
+
+.cta-card {
+  background-color: var(--btn-color);
+  padding: 3rem 0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h3 {
+  color: white;
+}
+
+#cta button {
+  border: 1px solid var(--main-text-color);
+  font-size: 14px;
+}
+
+#cta button:hover {
+  background-color: var(--main-text-color);
+  color: var(--btn-color);
+  cursor: pointer;
+}
+
+/* Footer Section*/
+
+footer {
+  padding: 2rem 0;
+}
+
+/* Media Queries */
+
+@media (max-width: 1400px) {
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1,
+  #hero p {
+    text-align: center;
+  }
+
+  #hero p {
+    margin: 1rem auto;
+  }
+
+  #hero button {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1000px) {
+  .items {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1.75rem;
+  }
+
+  .author {
+    font-size: 0.9rem;
+  }
+
+  .quote,
+  .author {
+    width: 80%;
+  }
+
+  #cta {
+    padding: 8rem 5%;
+  }
+
+  .cta-card {
+    flex-direction: column;
+  }
+
+  h3,
+  .cta-card p {
+    text-align: center;
+  }
+
+  .cta-card p,
+  .cta-card button {
+    margin-top: 0.25rem;
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  #hero {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  header p,
+  h3 {
+    font-size: 1.15rem;
+  }
+
+  header a {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  #hero p {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  #hero img {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .quote {
+    font-size: 1.25rem;
+  }
+
+  .author,
+  .cta-card p {
+    font-size: 0.75rem;
+  }
+
+  .cta-card {
+    padding: 1.5rem;
+  }
 }
